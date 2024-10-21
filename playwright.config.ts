@@ -9,11 +9,20 @@ export default defineConfig({
   reporter: [['html']], // Only use the HTML reporter
   use: {
     trace: 'on-first-retry',
+    headless: false,
   },
   projects: [
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
+    },
+    {
+      name: 'firefox',
+      use: { ...devices['Desktop Firefox'] },
+    },
+    {
+      name: 'webkit',
+      use: { ...devices['Desktop Safari'] },
     },
   ],
 });
